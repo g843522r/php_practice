@@ -63,14 +63,27 @@ echo '課題3の結果は'.multiplication($arr).'です。';
  }
 */
 
-// foreach文ではなくmax関数にて最大値を取得する
-function max_array($arr) {
+// パターン(1) foreach文ではなくmax関数にて最大値を取得
+function max_array1($arr) {
   $result4 = max($arr);
   return $result4;
 }
+$arr = array(1,4,3,7,5,2,6);
+echo '課題4のパターン(1)は'.max_array1($arr).'です。';
 
-$arr = array(1,2,3,4,5,6,7);
-echo '課題4の結果は'.max_array($arr).'です。';
+// パターン(2) foreach文で最大値を取得
+function max_array2($arr) {
+  $max_number = $arr[0];
+  foreach($arr as $a){
+    if($a >= $max_number) {
+      $max_number = $a;
+    }
+  }
+  return $max_number;
+}
+$arr = array(1,4,3,7,9,6);
+echo '課題4のパターン(2)は'.max_array2($arr).'です。';
+
 
 
 /*
